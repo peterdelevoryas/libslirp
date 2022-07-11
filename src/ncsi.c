@@ -176,6 +176,7 @@ static int ncsi_rsp_handler_gvi(Slirp *slirp, const struct ncsi_pkt_hdr *nh,
     struct ncsi_rsp_gvi_pkt *rsp = (struct ncsi_rsp_gvi_pkt *)rnh;
 
     rsp->ncsi_version = htonl(0xF1F0F000);
+    rsp->fw_version = htonl(0x01000000);
     rsp->mf_id = htonl(slirp->mfr_id);
 
     return 0;
